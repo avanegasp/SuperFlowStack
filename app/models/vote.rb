@@ -1,5 +1,5 @@
 class Vote < ApplicationRecord
   belongs_to :user
-  belongs_to :commentable, polymorphic: true
+  belongs_to :votable, polymorphic: true
 
 end
