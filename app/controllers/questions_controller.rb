@@ -5,4 +5,8 @@ class QuestionsController < ApplicationController
     puts Question.first.title
   end
 
+  def new
+  	@question = Question.new
+  end
+
 end

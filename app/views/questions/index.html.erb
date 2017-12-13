@@ -9,7 +9,15 @@
     </tr>
   </thead>
   <tbody>
-    <%@questions.each do |question|%>
+    <div>
+      <%= link_to "Ask a new question", new_question_path %> 
+    </div>
+    <div>
+      <%@questions.each do |question|%>
+      
+    </div>
+     
+
     <tr>
       <td><%=question.votes.count%></td>
       <td><%=question.answers.count%></td>
