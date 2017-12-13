@@ -10,57 +10,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212015250) do
+ActiveRecord::Schema.define(version: 20171213003553) do
 
   create_table "answers", force: :cascade do |t|
-    t.string "description"
-    t.integer "users_id"
-    t.integer "questions_id"
+    t.text "description"
+    t.integer "user_id"
+    t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["questions_id"], name: "index_answers_on_questions_id"
-    t.index ["users_id"], name: "index_answers_on_users_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "user"
-    t.string "description"
-    t.date "date"
+    t.integer "user_id"
+    t.text "description"
     t.string "commentable_type"
     t.integer "commentable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.integer "users_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_questions_on_users_id"
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "lastname"
-    t.string "email"
-    t.integer "age"
-    t.string "country"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "last_name"
+    t.integer "age"
+    t.string "country"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "votes", force: :cascade do |t|
-    t.string "user"
     t.integer "number"
-    t.string "type"
-    t.string "commentable_type"
-    t.integer "commentable_id"
+    t.integer "user_id"
+    t.string "votable_type"
+    t.integer "votable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["commentable_type", "commentable_id"], name: "index_votes_on_commentable_type_and_commentable_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
   end
 
 end

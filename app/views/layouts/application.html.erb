@@ -9,6 +9,30 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <% if user_signed_in? %>
+    <nav class="navbar navbar-light bg-light" style="background-color: #e3f2fd;">
+      <form class="form-inline">
+        <img src="/img/stack.png" class="logo rounded float-left" >
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="button"><%=  link_to "Sign out!",destroy_user_session_path, :method => 'delete'
+%></button>
+      </form>
+      <!-- Navbar content -->
+    </nav>
+    <% else  %>
+    <nav class="navbar navbar-light bg-light" style="background-color: #e3f2fd;">
+      <form class="form-inline">
+        <img src="/img/stack.png" class="logo rounded float-left" >
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="button"><a href="<%= new_user_session_path %>">Log in</a></button>
+        <button class="btn btn-outline-success" type="button"><%=  link_to "Sign in!", new_user_registration_path%></button>
+      </form>
+      <!-- Navbar content -->
+    </nav>
+    <% end %>
+  	<%= yield %>
   </body>
 </html>
