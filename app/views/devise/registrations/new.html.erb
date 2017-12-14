@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 <div class="container" style="width:240px; margin:0 auto;margin-top:50px; border:1px solid blue;border-radius:10px;">
-  <form style="padding:30px;">
+  <!-- <form style="padding:30px;"> -->
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
@@ -28,5 +28,5 @@
   <% end %>
 
   <%= render "devise/shared/links" %>
-  </form>
+  <!-- </form> -->
 </div>
