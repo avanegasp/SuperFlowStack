@@ -14,6 +14,8 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to question_path(@question.id)
     else
+    	puts @question.errors.full_messages
+      @errors = @question.errors.full_messages
       puts current_user
       render :new
   end

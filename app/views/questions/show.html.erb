@@ -1,20 +1,81 @@
-<h1>Aca es show</h1>
 <div class="container show">
   <h1><%=@question.title%></h1>
   <p class="description"><%=@question.description%></p>
+  <p><%=  @question.comments.count%></p>
   <%@question.comments.each do |comment|%>
-    <p><%comment.description%></p>
+    <p><%=comment.description%></p>
   <%end%>
+  <div class= question-comments>
+    
+  </div>
+
+  <% if user_signed_in? %>
+  <div>
+    <div class="form-row ">
+    <%= form_for [@question, @question.comments.new] do |f| %>
+      <div class="col">
+        <%= f.label :"Give us a comment" %><br />
+        <%= f.text_area :description, class:"form-control", autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Send Comment Question" %>
+      </div>
+    <% end %>
+      </div>
+       <% end %>
+    </div>
+
+   
+
+
   <div class="answer">
     <%@question.answers.each do |answer|%>
       <h1><%=answer.description%></h1>
       <%answer.comments.each do |comment|%>
-      <p><%=answer.comments.description%></p>
-    <%end%>
+        <p><%=comment.description%></p>
+      <%end%>
+
+      
+      <% if @errors_comments %>
+        <% @errors_comments.each do |error| %>
+         <ul class= "errors">
+           <li><%= error %></li>
+         </ul>
+        <% end %>
+      <% end %>
+      
+      <% if user_signed_in? %>
+          <div>
+            <div class="form-row ">
+              <%= form_for [answer, answer.comments.new] do |f| %>
+                <div class="col">
+                  <%= f.label :"Post your comment" %><br />
+                  <%= f.text_area :description, class:"form-control", autocomplete: "off" %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit "Send Comment Answer" %>
+                </div>
+              <% end %>
+              </div>
+            </div>
+        <%end%>
+      
     <%end%>
   </div>
+
   <div class="votes">
   </div>
+
+  <% if @errors_answer %>
+    <% @errors_answer.each do |error| %>
+     <ul class= "errors">
+       <li><%= error %></li>
+     </ul>
+    <% end %>
+  <% end %>
+  <% if user_signed_in? %>
   <div>
     <div class="form-row ">
     <%= form_for [@question, @question.answers.new] do |f| %>
@@ -28,14 +89,14 @@
       </div>
     <% end %>
       </div>
+      <% end %>
     </div>
+  
+  
 
-  </div>
-
-
-  <%=link_to "Edit Question", edit_question_path(@question.id)%>
-  <%=link_to "Ask Question" , new_question_path%>
+    <%=link_to "Edit Question", edit_question_path(@question.id)%>
+    <%=link_to "Ask Question" , new_question_path%>
   <%if current_user == @question.user%>
-  <%=link_to "Delete Question" , question_path, method:"delete"%>
+    <%=link_to "Delete Question" , question_path, method:"delete"%>
   <%end%>
 </div>

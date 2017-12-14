@@ -1,4 +1,13 @@
 <div class="container">
+  
+  <% if @errors %>
+    <% @errors.each do |error| %>
+     <ul class= "errors">
+       <li><%= error %></li>
+     </ul>
+    <% end %>
+  <% end %>
+  
   <div class="form-row ">
   <%= form_for @question do |f| %>
     <div class="col">
