@@ -1,19 +1,20 @@
 <div class="container">
   <div class="form-row ">
   <%= form_for @question do |f| %>
-    <div class="col">
+    <div class="col" style="margin-top:20px;">
       <%= f.label :title %><br />
       <%= f.text_field :title, class:"form-control", autofocus: true %>
     </div>
 
-    <div class="col">
+    <div class="col" style="margin-top:20px;">
       <%= f.label :description %><br />
       <%= f.text_area :description, class:"form-control", autocomplete: "off" %>
     </div>
 
-    <div class="actions" style="margin-top:50px;float:right">
-      <%= f.submit "Send Question"  %>
+    <div class="actions" style="margin-top:50px;float:right;">
+      <%= f.submit "Send"  %>
     </div>
   <% end %>
+    </div>
   </div>
 </div>

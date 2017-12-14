@@ -1,5 +1,4 @@
-<h1>aca van las preguntas</h1>
-
+<div class="container">
 <table class="table table-hover">
   <thead>
     <tr>
@@ -10,14 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <div>
+    <div class="ask" style="margin-left:940px;border: 1px solid blue;padding:15px;text-align:center;border-radius:5px;">
       <%= link_to "Ask a new question", new_question_path %>
     </div>
     <div>
       <%@questions.each do |question|%>
-
     </div>
-
 
     <tr>
       <td><%=question.votes.count%></td>
@@ -34,3 +31,4 @@
     <%end%>
   </tbody>
 </table>
+</div>

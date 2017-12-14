@@ -21,7 +21,26 @@ end
 
   def show
     @question = Question.find(params[:id])
-    @answer = Answer.new
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question.update(valid_params)
+      redirect_to question_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+
+    redirect_to questions_path
   end
 
   private

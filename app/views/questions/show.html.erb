@@ -1,5 +1,3 @@
-
-
 <h1>Aca es show</h1>
 <div class="container show">
   <h1><%=@question.title%></h1>
@@ -15,19 +13,29 @@
     <%end%>
     <%end%>
   </div>
-</div>
+  <div class="votes">
+  </div>
+  <div>
+    <div class="form-row ">
+    <%= form_for [@question, @question.answers.new] do |f| %>
+      <div class="col">
+        <%= f.label :"Post your answer" %><br />
+        <%= f.text_area :description, class:"form-control", autocomplete: "off" %>
+      </div>
 
+      <div class="actions">
+        <%= f.submit "Send Answer" %>
+      </div>
+    <% end %>
+      </div>
+    </div>
 
-<div class="form-row ">
-<%= form_for @answer do |f| %>
-  <div class="col">
-    <%= f.label :Youranswerhere%><br />
-    <%= f.text_area :description, class:"form-control", autocomplete: "off" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Put answer"  %>
-  </div>
-<% end %>
-  </div>
+
+  <%=link_to "Edit Question", edit_question_path(@question.id)%>
+  <%=link_to "Ask Question" , new_question_path%>
+  <%if current_user == @question.user%>
+  <%=link_to "Delete Question" , question_path, method:"delete"%>
+  <%end%>
 </div>
