@@ -9,7 +9,9 @@ class CommentsController < ApplicationController
 	  	if @comment.save
 	  		redirect_to question_path(param_question)
 	  	else
-	  		redirect_to question_path(param_question)
+	  		@errors_comment_que = @comment.errors.full_messages
+	  		@question = Question.find(param_question)
+	  		render '/questions/show'
 	  	end
 	 else
 
@@ -18,9 +20,8 @@ class CommentsController < ApplicationController
 	  	if @comment.save
 	  		redirect_to question_path(Answer.find(param_answer).question.id)
 	  	else
-        
-  		  @errors_comment = @comment.errors.full_messages
-        @question = Answer.find(param_answer).question
+        	@errors_comment_ans = @comment.errors.full_messages
+        	@question = Answer.find(param_answer).question
 
         render '/questions/show'
 	  		# redirect_to question_path(Answer.find(param_answer).question.id)
