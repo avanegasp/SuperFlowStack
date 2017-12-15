@@ -1,9 +1,9 @@
 <div class="container show">
   <div class = "question">
-  <h1><%=@question.title%></h1>
-  <h5><%= @question.user.email %></h5>
-  <h5><%= @question.created_at %></h5>
-  <h2 class="description"><%= (@question.description)%></h2>
+    <h1><%=@question.title%></h1>
+    <h5><%= @question.user.email %></h5>
+    <h5><%= @question.created_at %></h5>
+    <h2 class="description"><%= (@question.description)%></h2>
   </div>
 
   <% if (@errors_comment_que) %>
@@ -14,6 +14,22 @@
       <% end %>
     <% end %>
   
+  <div class= "votes">
+    <%= form_for [@question, @question.votes.new] do |f| %>
+    <%= f.hidden_field  :type, value: "sum"%>
+    <%= f.submit "Vote +" %>
+    <% end %>
+  </div>
+
+  <p>Votes = <%=  @question.votes.count%></p>
+
+  <div class= "votes">
+    <%= form_for [@question, @question.votes.new] do |f| %>
+    <%= f.hidden_field  :type, value: "rest" %>
+    <%= f.submit "Vote -" %>
+    <% end %>
+  </div>
+
   <p> Total comments: <%=  @question.comments.count%></p>
   <%@question.comments.each do |comment|%>
     <div class= "comments">
@@ -52,12 +68,28 @@
         </ul>
       <% end %>
     <% end %>
+
     <%@question.answers.each do |answer|%>
       <div class="answer_2">
         <h1><%=answer.description%></h1>
         <p><%=answer.user.email%></p>
         <p><%=answer.created_at%></p>
 
+        <div class= "votes">
+          <%= form_for [answer, answer.votes.new] do |f| %>
+          <%= f.hidden_field  :type, value: "sum"%>
+          <%= f.submit "Vote +" %>
+          <% end %>
+        </div>
+
+        <p>Votes = <%=  answer.votes.count%></p>
+
+        <div class= "votes">
+          <%= form_for [answer, answer.votes.new] do |f| %>
+          <%= f.hidden_field  :type, value: "rest" %>
+          <%= f.submit "Vote -" %>
+          <% end %>
+        </div>
       </div>
       <%answer.comments.each do |comment|%>
       <div class = "comments">
