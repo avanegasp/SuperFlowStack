@@ -12,19 +12,22 @@
 
     <% if user_signed_in? %>
     <nav class="navbar navbar-light bg-light" style="background-color: #e3f2fd;padding:10px">
+      <a href="/questions"><img src="/img/stack.png" class="logo rounded float-left" ></a>
+  
+      <%=form_tag questions_path, method:"GET", remote: true, id: "search" do%>
+        <%= text_field_tag :query %>
+        <%= submit_tag "search_new" %>
+      <% end %>
       <form class="form-inline">
-        <img src="/img/stack.png" class="logo rounded float-left" >
-        <input class="form-control mr-sm-2" style="margin-left:230px;padding:0px 50px;" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" style="margin-left:430px" type="submit">Search</button>
         <button class="btn btn-outline-success" style="margin-left:20px" type="button"><%=  link_to "Sign out!",destroy_user_session_path, :method => 'delete'
-%></button>
+        %></button>
       </form>
       <!-- Navbar content -->
     </nav>
     <% else  %>
+    <a href="/questions"><img src="/img/stack.png" class="logo rounded float-left" ></a>
     <nav class="navbar navbar-light bg-light" style="background-color: #e3f2fd;padding: 10px;">
       <form class="form-inline">
-        <img src="/img/stack.png" class="logo rounded float-left" >
         <input class="form-control mr-sm-2" style="margin-left:230px;padding:0px 50px;" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         <button class="btn btn-outline-success" style="margin-left:380px" type="button"><a href="<%= new_user_session_path %>">Log in</a></button>

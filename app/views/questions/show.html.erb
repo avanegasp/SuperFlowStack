@@ -3,7 +3,7 @@
   <h1><%=@question.title%></h1>
   <h5><%= @question.user.email %></h5>
   <h5><%= @question.created_at %></h5>
-  <h2 class="description"><%= markdown(@question.description)%></h2>
+  <h2 class="description"><%= (@question.description)%></h2>
   </div>
 
   <% if (@errors_comment_que) %>
