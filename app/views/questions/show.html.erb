@@ -1,13 +1,28 @@
 <div class="container show">
+  <div class = "question">
   <h1><%=@question.title%></h1>
-  <p class="description"><%=@question.description%></p>
-  <p><%=  @question.comments.count%></p>
-  <%@question.comments.each do |comment|%>
-    <p><%=comment.description%></p>
-  <%end%>
-  <div class= question-comments>
-
+  <h5><%= @question.user.email %></h5>
+  <h5><%= @question.created_at %></h5>
+  <h2 class="description"><%= markdown(@question.description)%></h2>
   </div>
+
+  <% if (@errors_comment_que) %>
+      <% @errors_comment_que.each do |error| %>
+        <ul class= "errors">
+          <li><%= error %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  
+  <p> Total comments: <%=  @question.comments.count%></p>
+  <%@question.comments.each do |comment|%>
+    <div class= "comments">
+      <p><%=comment.description%></p>
+      <p><%=comment.user.email%></p>
+      <p><%=comment.created_at%></p>  
+    </div>
+    
+  <%end%>
 
   <% if user_signed_in? %>
   <div>
@@ -30,23 +45,28 @@
 
 
   <div class="answer">
-    <% if (@errors_comment) %>
-      <% @errors_comment.each do |error| %>
+    <% if (@errors_comment_ans) %>
+      <% @errors_comment_ans.each do |error| %>
         <ul class= "errors">
           <li><%= error %></li>
         </ul>
       <% end %>
     <% end %>
     <%@question.answers.each do |answer|%>
-      <h1><%=answer.description%></h1>
+      <div class="answer_2">
+        <h1><%=answer.description%></h1>
+        <p><%=answer.user.email%></p>
+        <p><%=answer.created_at%></p>
+
+      </div>
       <%answer.comments.each do |comment|%>
+      <div class = "comments">
         <p><%=comment.description%></p>
+        <p><%= comment.user.email %></p>
+        <p><%= comment.created_at %></p>
+      </div> 
       <%end%>
-
-
-
-
-
+      
       <% if user_signed_in? %>
           <div>
             <div class="form-row ">
@@ -102,6 +122,6 @@
     <%=link_to "Edit Question", edit_question_path(@question.id)%>
     <%=link_to "Ask Question" , new_question_path%>
   <%if current_user == @question.user%>
-    <%=link_to "Delete Question" , question_path, method:"delete"%>
+    <%=link_to "Delete Question" , question_path(@question.id), method:"delete"%>
   <%end%>
 </div>
