@@ -6,7 +6,7 @@
     <p><%=comment.description%></p>
   <%end%>
   <div class= question-comments>
-    
+
   </div>
 
   <% if user_signed_in? %>
@@ -26,25 +26,27 @@
        <% end %>
     </div>
 
-   
+
 
 
   <div class="answer">
+    <% if (@errors_comment) %>
+      <% @errors_comment.each do |error| %>
+        <ul class= "errors">
+          <li><%= error %></li>
+        </ul>
+      <% end %>
+    <% end %>
     <%@question.answers.each do |answer|%>
       <h1><%=answer.description%></h1>
       <%answer.comments.each do |comment|%>
         <p><%=comment.description%></p>
       <%end%>
 
-      
-      <% if @errors_comments %>
-        <% @errors_comments.each do |error| %>
-         <ul class= "errors">
-           <li><%= error %></li>
-         </ul>
-        <% end %>
-      <% end %>
-      
+
+
+
+
       <% if user_signed_in? %>
           <div>
             <div class="form-row ">
@@ -61,12 +63,15 @@
               </div>
             </div>
         <%end%>
-      
     <%end%>
   </div>
 
+
+
   <div class="votes">
   </div>
+
+
 
   <% if @errors_answer %>
     <% @errors_answer.each do |error| %>
@@ -91,8 +96,8 @@
       </div>
       <% end %>
     </div>
-  
-  
+
+
 
     <%=link_to "Edit Question", edit_question_path(@question.id)%>
     <%=link_to "Ask Question" , new_question_path%>

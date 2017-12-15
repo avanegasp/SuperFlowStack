@@ -11,19 +11,19 @@ class CommentsController < ApplicationController
 	  	else
 	  		redirect_to question_path(param_question)
 	  	end
-	else
-		
+	 else
+
 		param_answer = params[:answer_id]
 	  	@comment = Answer.find(param_answer).comments.new(valid_params_comments)
 	  	if @comment.save
 	  		redirect_to question_path(Answer.find(param_answer).question.id)
 	  	else
-	  		"*"*50	
-	  		puts @comment.errors.full_messages
-	  		"*"*50
-	  		@errors_comment = @comment.errors.full_messages
-	  		redirect_to question_path(Answer.find(param_answer).question.id)
+        
+  		  @errors_comment = @comment.errors.full_messages
+        @question = Answer.find(param_answer).question
 
+        render '/questions/show'
+	  		# redirect_to question_path(Answer.find(param_answer).question.id)
 	  	end
 	  end
 end
@@ -37,6 +37,6 @@ end
   private
   def valid_params_comments
   	params.require(:comment).permit(:description).merge(user_id: current_user.id)
-  	
+
   end
 end
