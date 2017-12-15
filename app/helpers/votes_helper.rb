@@ -7,7 +7,8 @@ def create_vote(param_question)
         else
           @errors_vote_que = @vote.errors.full_messages
           @question = Question.find(param_question)
-     
+
         end
     end
+
 end

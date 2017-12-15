@@ -1,4 +1,12 @@
 <div class="container show">
+  <div class="btn-all">
+    <div class="btn-edit">
+      <%=link_to "Edit Question", edit_question_path(@question.id)%>
+    </div>
+    <div class="btn-question">
+      <%=link_to "Ask Question" , new_question_path%>
+    </div>
+  </div>
   <div class = "question">
     <h1><%=@question.title%></h1>
     <h5><%= @question.user.email %></h5>
@@ -13,8 +21,8 @@
         </ul>
       <% end %>
     <% end %>
-  
-  <div class= "votes">
+
+  <div class="votes">
     <%= form_for [@question, @question.votes.new] do |f| %>
     <%= f.hidden_field  :type, value: "sum"%>
     <%= f.submit "Vote +" %>
@@ -23,7 +31,7 @@
 
   <p>Votes = <%=  @question.votes.count%></p>
 
-  <div class= "votes">
+  <div class="votes">
     <%= form_for [@question, @question.votes.new] do |f| %>
     <%= f.hidden_field  :type, value: "rest" %>
     <%= f.submit "Vote -" %>
@@ -35,9 +43,9 @@
     <div class= "comments">
       <p><%=comment.description%></p>
       <p><%=comment.user.email%></p>
-      <p><%=comment.created_at%></p>  
+      <p><%=comment.created_at%></p>
     </div>
-    
+
   <%end%>
 
   <% if user_signed_in? %>
@@ -57,9 +65,6 @@
        <% end %>
     </div>
 
-
-
-
   <div class="answer">
     <% if (@errors_comment_ans) %>
       <% @errors_comment_ans.each do |error| %>
@@ -69,12 +74,17 @@
       <% end %>
     <% end %>
 
+
     <%@question.answers.each do |answer|%>
       <div class="answer_2">
         <h1><%=answer.description%></h1>
+      <div class="inline">
         <p><%=answer.user.email%></p>
         <p><%=answer.created_at%></p>
+      </div>
+      </div>
 
+      <div class="btn-votes">
         <div class= "votes">
           <%= form_for [answer, answer.votes.new] do |f| %>
           <%= f.hidden_field  :type, value: "sum"%>
@@ -91,14 +101,17 @@
           <% end %>
         </div>
       </div>
+
       <%answer.comments.each do |comment|%>
       <div class = "comments">
         <p><%=comment.description%></p>
-        <p><%= comment.user.email %></p>
-        <p><%= comment.created_at %></p>
-      </div> 
+        <div class="inline">
+          <p><%= comment.user.email %></p>
+          <p><%= comment.created_at %></p>
+        </div>
+      </div>
       <%end%>
-      
+
       <% if user_signed_in? %>
           <div>
             <div class="form-row ">
@@ -117,13 +130,6 @@
         <%end%>
     <%end%>
   </div>
-
-
-
-  <div class="votes">
-  </div>
-
-
 
   <% if @errors_answer %>
     <% @errors_answer.each do |error| %>
@@ -149,10 +155,6 @@
       <% end %>
     </div>
 
-
-
-    <%=link_to "Edit Question", edit_question_path(@question.id)%>
-    <%=link_to "Ask Question" , new_question_path%>
   <%if current_user == @question.user%>
     <%=link_to "Delete Question" , question_path(@question.id), method:"delete"%>
   <%end%>

@@ -1,29 +1,56 @@
-.show{
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
 .description{
-  border: 1px solid black;
+  // border-top: 1px solid black;
   border-radius: 2px;
 }
 
 .question {
-	border: 1px solid green;
+	// border-bottom: 1px solid black;
   border-radius: 2px;
 }
 .answer{
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   border-radius: 2px;
+  // background-color: grey;
 }
 
 .answer_2{
-  border: 1px solid blue;
+  border-top: 1px solid black;
   border-radius: 2px;
 }
 
-.comments{
-	 border: 1px solid red;
-  border-radius: 2px;
+.inline{
+  display: inline-flex;
+  margin-left: 850px;
+}
 
+.inline p{
+  margin-right: 20px;
+}
+
+.comments{
+	//  border-top: 1px solid black;
+  border-radius: 2px;
+}
+
+.btn-edit{
+  border:1px solid black;
+  // background-color: blue;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.btn-question{
+  border:1px solid black;
+  // background-color: blue;
+  padding: 10px;
+}
+
+.btn-all{
+  display:-webkit-inline-box;
+  float: right;
+  margin-top: 20px;
+}
+
+.btn-votes{
+  display: inline-flex;
 }

@@ -2,16 +2,11 @@ class QuestionsController < ApplicationController
    before_action :authenticate_user! , only: [:new]
 
   def index
-  	
-  	puts "*"*100
+
   	@questions = Question.all
   	if params[:query].present?
   		@questions = @questions.where("title LIKE :query", query: "%#{params[:query]}%")
   	end
-  	puts "+"*100
-  	puts @questions
-  	puts "+"*100
-  	render "index"
   end
 
   def new
