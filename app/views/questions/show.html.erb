@@ -102,6 +102,6 @@
     <%=link_to "Edit Question", edit_question_path(@question.id)%>
     <%=link_to "Ask Question" , new_question_path%>
   <%if current_user == @question.user%>
-    <%=link_to "Delete Question" , question_path, method:"delete"%>
+    <%=link_to "Delete Question" , question_path(@question.id), method:"delete"%>
   <%end%>
 </div>
