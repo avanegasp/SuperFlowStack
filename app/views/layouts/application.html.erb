@@ -16,7 +16,7 @@
 
       <%=form_tag questions_path, method:"GET", id: "search" do%>
         <%= text_field_tag :query %>
-        <%= submit_tag "search_new" %>
+        <%= submit_tag "search" %>
       <% end %>
       <form class="form-inline">
         <button class="btn btn-outline-success" style="margin-left:1110px; display:inline;" type="button"><%=  link_to "Sign out!",destroy_user_session_path, :method => 'delete'
@@ -29,7 +29,7 @@
       <a href="/questions"><img src="/img/stack.png" class="logo rounded float-left" ></a>
       <%=form_tag questions_path, method:"GET", id: "search" do %>
         <%= text_field_tag :query %>
-        <%= submit_tag "search_new" %>
+        <%= submit_tag "search" %>
       <% end %>
       <form class="form-inline">
         <!-- <input class="form-control mr-sm-2" style="margin-left:330px;padding:0px 50px;" type="search" placeholder="Search" aria-label="Search"> -->
