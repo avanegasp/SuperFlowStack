@@ -1,17 +1,17 @@
 <div class="container show">
   <div class="btn-all">
     <div class="btn-edit">
-      <%=link_to "Edit Question", edit_question_path(@question.id)%>
+      <%=link_to "Edit Question",edit_question_path(@question.id)%>
     </div>
     <div class="btn-question">
       <%=link_to "Ask Question" , new_question_path%>
     </div>
   </div>
   <div class = "question">
-    <h1><%=@question.title%></h1>
+    <h1><%=markdown(@question.title)%></h1>
     <h5><%= @question.user.email %></h5>
     <h5><%= @question.created_at %></h5>
-    <h2 class="description"><%= (@question.description)%></h2>
+    <p class="description"><%= markdown(@question.description)%></p>
   </div>
 
   <% if (@errors_comment_que) %>

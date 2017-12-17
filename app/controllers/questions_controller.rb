@@ -2,7 +2,6 @@ class QuestionsController < ApplicationController
    before_action :authenticate_user! , only: [:new]
 
   def index
-
   	@questions = Question.all
   	if params[:query].present?
   		@questions = @questions.where("title LIKE :query", query: "%#{params[:query]}%")
