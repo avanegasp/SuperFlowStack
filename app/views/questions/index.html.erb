@@ -1,36 +1,33 @@
 <div class="container">
-
-  <p>:<%= @questions.length %>:</p>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Votes</th>
-      <th scope="col">Answers</th>
-      <th scope="col">Views</th>
-      <th scope="col">Questions</th>
-    </tr>
-  </thead>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Votes</th>
+        <th scope="col">Answers</th>
+        <th scope="col">Views</th>
+        <th scope="col">Questions</th>
+      </tr>
+    </thead>
   <tbody>
     <div class="ask" style="margin-left:940px;border: 1px solid blue;padding:15px;text-align:center;border-radius:5px;">
-      <%= link_to "Ask a new question", new_question_path %>
+    <%= link_to "Ask a new question", new_question_path %>
     </div>
-
     <div>
-        <%@questions.each do |question|%>
-      <tr>
-        <td><%=question.votes.count%></td>
-        <td><%=question.answers.count%></td>
-        <td> 10</td>
-        <td> 
-          <div>
-          <ul>
-            <li> <p> <%= link_to question.title, question_path(question.id) %></p></li>
-            <li> <p> <%= question.user.email %></p></li>
-            <li> <p> <%= question.created_at%> </p></li>
-          </ul>
-          </div>
-        </td>
-      </tr>
+      <%@questions.each do |question|%>
+        <tr>
+          <td><%=question.votes.count%></td>
+          <td><%=question.answers.count%></td>
+          <td> 10</td>
+          <td>
+            <div>
+              <ul>
+                <li> <p> <%= link_to question.title, question_path(question.id) %></p></li>
+                <li> <p> <%= question.user.email %></p></li>
+                <li> <p> <%= question.created_at%> </p></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       <%end%>
     </div>
   </tbody>
