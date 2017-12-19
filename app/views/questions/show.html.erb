@@ -50,7 +50,7 @@
   <%@question.comments.each do |comment|%>
   <div class="allcomments">
     <div class="commentdescription">
-      <p><%=comment.description%></p>
+      <p><%=markdown(comment.description)%></p>
     </div>
     <div class= "commentsmail">
       <p>User:<%=comment.user.email%></p>
@@ -87,7 +87,7 @@
 
     <%@question.answers.each do |answer|%>
       <div class="answer_2">
-          <h1><%=answer.description%></h1>
+          <h1><%=markdown(answer.description)%></h1>
         <div class="inline">
           <p>User:<%=answer.user.email%></p>
           <p>Created<%=answer.created_at%></p>
@@ -114,7 +114,7 @@
 
       <%answer.comments.each do |comment|%>
       <div class = "comments">
-        <p><%=comment.description%></p>
+        <p><%=(comment.description)%></p>
         <div class="inline">
           <p><%= comment.user.email %></p>
           <p><%= comment.created_at %></p>
