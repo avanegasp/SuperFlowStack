@@ -13,7 +13,7 @@
           <a href="/questions"><img src="/img/stack.png" class="logo rounded float-left" ></a>
           <%=form_tag questions_path, method:"GET", id: "search" do%>
             <%= text_field_tag :query %>
-            <%= submit_tag "search" %>
+            <%= submit_tag "Search" %>
           <% end %>
           <a class="navbar-brand" href="/"> Welcome, <%= User.find_by(id: [current_user.id]).email%></a>
           <button class="btn btn-outline-success" type="button"><%=  link_to "Sign out",destroy_user_session_path, :method => 'delete'
@@ -23,10 +23,10 @@
         <nav class="navbar navbar-light bg-light">
             <a href="/questions"><img src="/img/stack.png" class="logo rounded float-left" ></a>
             <button class="btn btn-outline-success" type="button"><a href="<%= new_user_session_path %>">Log In</a></button>
-            <button class="second btn btn-outline-success" type="button"><%=  link_to "Sign Up", new_user_registration_path%></button>
+            <button class="second btn btn-outline-success" type="button"><%=  link_to "Sign In", new_user_registration_path%></button>
           <%=form_tag questions_path, method:"GET", id: "search" do %>
             <%= text_field_tag :query %>
-            <%= submit_tag "search" %>
+            <%= submit_tag "Search" %>
           <% end %>
         </nav>
         <% end %>
