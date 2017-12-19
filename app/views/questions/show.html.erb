@@ -1,4 +1,4 @@
-<div class="container show">
+<div class="container">
   <div class="btn-all">
     <div class="btn-edit">
       <%=link_to "Edit Question",edit_question_path(@question.id)%>
@@ -7,13 +7,17 @@
       <%=link_to "Ask Question" , new_question_path%>
     </div>
   </div>
-  <div class = "question">
-    <h1><%=markdown(@question.title)%></h1>
-    <h5><%= @question.user.email %></h5>
-    <h5><%= @question.created_at %></h5>
-    <p class="description"><%= markdown(@question.description)%></p>
-  </div>
 
+    <div class ="emailandcreated">
+      <h5>User: <%= @question.user.email %></h5>
+      <h5>Created: <%= @question.created_at %></h5>
+    </div>
+    <h1><%=markdown(@question.title)%></h1>
+
+
+  <div class="description">
+  <p><%= markdown(@question.description)%></p>
+  </div>
   <% if (@errors_comment_que) %>
       <% @errors_comment_que.each do |error| %>
         <ul class= "errors">
@@ -22,7 +26,9 @@
       <% end %>
     <% end %>
 
-  <div class="votes">
+
+<div class="votes">
+  <div class="">
     <%= form_for [@question, @question.votes.new] do |f| %>
     <%= f.hidden_field  :type, value: "sum"%>
     <%= f.submit "Vote +" %>
@@ -31,39 +37,44 @@
 
   <p>Votes = <%=  @question.votes.count%></p>
 
-  <div class="votes">
+  <div class="">
     <%= form_for [@question, @question.votes.new] do |f| %>
     <%= f.hidden_field  :type, value: "rest" %>
     <%= f.submit "Vote -" %>
     <% end %>
   </div>
+</div>
 
-  <p> Total comments: <%=  @question.comments.count%></p>
+  <h5> Total comments: <%=  @question.comments.count%></h5>
+
   <%@question.comments.each do |comment|%>
-    <div class= "comments">
+  <div class="allcomments">
+    <div class="commentdescription">
       <p><%=comment.description%></p>
-      <p><%=comment.user.email%></p>
-      <p><%=comment.created_at%></p>
     </div>
-
+    <div class= "commentsmail">
+      <p>User:<%=comment.user.email%></p>
+      <p>Creaded:<%=comment.created_at%></p>
+    </div>
+  </div>
   <%end%>
 
   <% if user_signed_in? %>
-  <div>
+
     <div class="form-row ">
-    <%= form_for [@question, @question.comments.new] do |f| %>
+        <%= form_for [@question, @question.comments.new] do |f| %>
+
       <div class="col">
         <%= f.label :"Give us a comment" %><br />
         <%= f.text_area :description, class:"form-control", autocomplete: "off" %>
       </div>
 
-      <div class="actions">
+      <div class="send">
         <%= f.submit "Send Comment Question" %>
       </div>
     <% end %>
-      </div>
-       <% end %>
     </div>
+   <% end %>
 
   <div class="answer">
     <% if (@errors_comment_ans) %>
@@ -74,17 +85,16 @@
       <% end %>
     <% end %>
 
-
     <%@question.answers.each do |answer|%>
       <div class="answer_2">
-        <h1><%=answer.description%></h1>
-      <div class="inline">
-        <p><%=answer.user.email%></p>
-        <p><%=answer.created_at%></p>
-      </div>
+          <h1><%=answer.description%></h1>
+        <div class="inline">
+          <p>User:<%=answer.user.email%></p>
+          <p>Created<%=answer.created_at%></p>
+        </div>
       </div>
 
-      <div class="btn-votes">
+      <!-- <div class="btn-votes">
         <div class= "votes">
           <%= form_for [answer, answer.votes.new] do |f| %>
           <%= f.hidden_field  :type, value: "sum"%>
@@ -100,7 +110,7 @@
           <%= f.submit "Vote -" %>
           <% end %>
         </div>
-      </div>
+      </div> -->
 
       <%answer.comments.each do |comment|%>
       <div class = "comments">
@@ -113,7 +123,6 @@
       <%end%>
 
       <% if user_signed_in? %>
-          <div>
             <div class="form-row ">
               <%= form_for [answer, answer.comments.new] do |f| %>
                 <div class="col">
@@ -121,12 +130,11 @@
                   <%= f.text_area :description, class:"form-control", autocomplete: "off" %>
                 </div>
 
-                <div class="actions">
+                <div class="send">
                   <%= f.submit "Send Comment Answer" %>
                 </div>
               <% end %>
               </div>
-            </div>
         <%end%>
     <%end%>
   </div>
@@ -138,24 +146,28 @@
      </ul>
     <% end %>
   <% end %>
+
+
   <% if user_signed_in? %>
   <div>
     <div class="form-row ">
-    <%= form_for [@question, @question.answers.new] do |f| %>
+      <%= form_for [@question, @question.answers.new] do |f| %>
       <div class="col">
         <%= f.label :"Post your answer" %><br />
         <%= f.text_area :description, class:"form-control", autocomplete: "off" %>
       </div>
-
-      <div class="actions">
+      <div class="send">
         <%= f.submit "Send Answer" %>
-      </div>
-    <% end %>
       </div>
       <% end %>
     </div>
-
+    <% end %>
+  </div>
   <%if current_user == @question.user%>
-    <%=link_to "Delete Question" , question_path(@question.id), method:"delete"%>
+  <!-- <div class="delete"> -->
+    <div class="btn-delete">
+      <button><%=link_to "Delete Question" , question_path(@question.id), method:"delete"%></button>
+    </div>
+  <!-- </div> -->
   <%end%>
 </div>
