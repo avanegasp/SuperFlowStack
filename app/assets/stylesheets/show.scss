@@ -2,6 +2,11 @@
   background-color: #F5F3F3;
 }
 
+
+// .allcomments{
+// background: #EBF6F5;
+// }
+
 .emailandcreated {
 float: right;
 margin-right: 20px;
@@ -24,35 +29,12 @@ margin-right: 20px;
   float: right;
 }
 
-.comments{
-float: right;
-}
-
 .commentsmail{
   text-align: right;
 }
 
 .inline{
 text-align: right;
-}
-
-.btn-delete{
-  color:black;
-}
-
-.answer{
-  // border-bottom: 1px solid black;
-  border-radius: 2px;
-  // background-color: grey;
-}
-
-.answer_2{
-  // border-top: 1px solid black;
-  border-radius: 2px;
-}
-
-.inline p{
-  margin-right: 20px;
 }
 
 .btn-edit{
@@ -64,7 +46,6 @@ text-align: right;
 
 .btn-question{
   border:1px solid black;
-  // background-color: blue;
   padding: 10px;
 }
 
@@ -74,6 +55,25 @@ text-align: right;
   margin-top: 20px;
 }
 
-.btn-votes{
-  display: inline-flex;
-}
+// .btn-votes{
+//   display: inline-flex;
+// }
+//
+// .btn-delete{
+//   color:black;
+// }
+
+// .answer{
+//   // border-bottom: 1px solid black;
+//   border-radius: 2px;
+//   // background-color: grey;
+// }
+
+// .answer_2{
+//   // border-top: 1px solid black;
+//   border-radius: 2px;
+// }
+//
+// .inline p{
+//   margin-right: 20px;
+// }
