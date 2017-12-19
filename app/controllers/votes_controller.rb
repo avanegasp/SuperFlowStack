@@ -1,9 +1,4 @@
 class VotesController < ApplicationController
-  def index
-  end
-
-  def show
-  end
 
   def create
     if params.key?("question_id")
@@ -41,10 +36,3 @@ class VotesController < ApplicationController
       end
     end
   end
-
-  def new
-  end
-
-  def edit
-  end
-end

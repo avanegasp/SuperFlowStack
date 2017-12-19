@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  def edit
-  end
 
   def create
   	if params.key?("question_id")
@@ -22,22 +20,13 @@ class CommentsController < ApplicationController
 	  	else
         	@errors_comment_ans = @comment.errors.full_messages
         	@question = Answer.find(param_answer).question
-
         render '/questions/show'
-	  		# redirect_to question_path(Answer.find(param_answer).question.id)
 	  	end
 	  end
 end
 
-  def delete
-  end
-
-  def update
-  end
-
   private
   def valid_params_comments
   	params.require(:comment).permit(:description).merge(user_id: current_user.id)
-
   end
 end
