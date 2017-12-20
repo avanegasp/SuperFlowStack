@@ -96,7 +96,7 @@
 
       <%answer.comments.each do |comment|%>
       <div class = "comments">
-        <p><%=(comment.description)%></p>
+        <p><%=markdown(comment.description)%></p>
       </div>
         <div class="inline">
           <p><%= comment.user.email %></p>

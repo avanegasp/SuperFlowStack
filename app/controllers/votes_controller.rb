@@ -18,7 +18,6 @@ class VotesController < ApplicationController
         render '/questions/show'
       end
    else
-
       param_answer = params[:answer_id]
       if params[:vote][:type]=="sum"
         @vote = Answer.find(param_answer).votes.new(user_id: current_user.id)
@@ -36,3 +35,4 @@ class VotesController < ApplicationController
       end
     end
   end
+end
