@@ -1,0 +1,299 @@
+[33mcommit e2f4ec77a7a925dc99f2bc17861f686605bbb7ed[m
+Merge: 81c4858 b7115ea
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Wed Dec 20 12:22:36 2017 -0500
+
+    mergin from heroku master
+
+[33mcommit 81c4858c44a7df6ad72985416730e52593b5ee01[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Wed Dec 20 12:11:03 2017 -0500
+
+    Fixing bugg on the editing of wrong answers
+
+[33mcommit fd4d3a9ac1efb656e6de34036847e3b5af93055b[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Wed Dec 20 11:58:11 2017 -0500
+
+    Fixing the vote plus error and avoiding the option for the wrong user to edit one question
+
+[33mcommit b7115eaaf848ccf73ed2a089c07b31c821d59a3b[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Wed Dec 20 10:07:22 2017 -0500
+
+    Finish project
+
+[33mcommit cccd83f056941629cbc37025c451f8de08722136[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Tue Dec 19 15:14:12 2017 -0500
+
+    Final
+
+[33mcommit 5f601fe86584d7c94562772668bfe790f7e055b6[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Tue Dec 19 11:35:08 2017 -0500
+
+    Aplication ready
+
+[33mcommit 7d130415ecbbe23aee0c12e417ae7deb0d32fc90[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Tue Dec 19 11:14:12 2017 -0500
+
+    Fixing questions controller
+
+[33mcommit 0942b28b799b8a44e61dc3042099e34316d1e128[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Tue Dec 19 11:02:18 2017 -0500
+
+    Fixing css
+
+[33mcommit 6975925ee5358df4196a79862de0cad514889676[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Tue Dec 19 10:18:06 2017 -0500
+
+    Fix redcarpet
+
+[33mcommit 6560a0c651dd58dc1233b9b6adf7b3398f737f28[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Tue Dec 19 10:13:42 2017 -0500
+
+    Fix Redcarpet
+
+[33mcommit 9ed03428d0dc291b3868e9d644c5d296a328d52d[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Mon Dec 18 22:29:31 2017 -0500
+
+    Re opening the app since friday and checking the good changes done by angie
+
+[33mcommit 019e8a24341beda0b2bb75a88651d76e0647255a[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Mon Dec 18 20:52:52 2017 -0500
+
+    Almost done 99%
+
+[33mcommit ca54dcaf4115be3a29819fa31082acf3c32fc811[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Mon Dec 18 16:20:40 2017 -0500
+
+    log in and sign in with css and navbar too
+
+[33mcommit 67110f981724c4711f76e0885e63bda717623a71[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Sun Dec 17 16:50:12 2017 -0500
+
+    Puting markdown
+
+[33mcommit ddd9b866b13e47adb6938a8d89a032ec95680ec8[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Fri Dec 15 19:02:06 2017 -0500
+
+    Change word search
+
+[33mcommit 277d7ecd62d77318884ec8a9de4c1ff8a0bd3d0b[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Fri Dec 15 18:57:03 2017 -0500
+
+    Almost done
+
+[33mcommit 5a15b69cd7c4d6147d9f2480eab282e00e03e20e[m
+Merge: 86b6efd cabe4d3
+Author: avanegasp <arco527@gmail.com>
+Date:   Fri Dec 15 16:06:50 2017 -0500
+
+    We have 95% SuperOverStack works
+
+[33mcommit cabe4d33ed72350c312b39591b99eb684456b851[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Fri Dec 15 16:04:04 2017 -0500
+
+    votes feature v3.0 questions and answers done
+
+[33mcommit 53020f1631253f711598936631d7875d7e057b6e[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Fri Dec 15 15:21:33 2017 -0500
+
+    votes feature v1.0
+
+[33mcommit 86b6efd12debec759a1fcc0688d8bb12fd6768a2[m
+Merge: 47c6fc7 c166b7c
+Author: avanegasp <arco527@gmail.com>
+Date:   Fri Dec 15 14:32:05 2017 -0500
+
+    90% SuperApp from david
+
+[33mcommit c166b7c2b2ee69b5e8b39995725205ec02501175[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Fri Dec 15 14:31:35 2017 -0500
+
+    small modification on the nav bar and questions controller.
+
+[33mcommit 7465b8af5400bcb46b2449be4edcd40cb444e6b5[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Fri Dec 15 12:08:21 2017 -0500
+
+    Application working without votes and search, also deployed on Heroku
+
+[33mcommit 47c6fc700f862ca7b60dbc9834f3432d62d4cf6a[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Fri Dec 15 10:40:35 2017 -0500
+
+    fixing bug in delete bottom
+
+[33mcommit feec69874821d3f995e2bc58140a6b6024e9f06e[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Thu Dec 14 20:45:47 2017 -0500
+
+    Fixing second last_name
+
+[33mcommit cac2323208d49e7c61d1d0d9f817c2513f41b08b[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Thu Dec 14 20:43:21 2017 -0500
+
+    Fixin last_name
+
+[33mcommit 5a108253efc6b383ae83e18f1a2eb8947b32c52e[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Thu Dec 14 20:37:11 2017 -0500
+
+    Put sqlite3 in development enviroment
+
+[33mcommit 68df05cf876c1f9f521abe1a5242e8b975bb2fec[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Thu Dec 14 20:03:32 2017 -0500
+
+    Verificates works
+
+[33mcommit 507f1091fac267bce655900c93facfa676b81f40[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Thu Dec 14 18:07:24 2017 -0500
+
+    commment controller and comments new finished
+
+[33mcommit 372d137fc97c3a2990e0490bc8eca0ad9fed1b94[m
+Merge: f1fc851 58eeb01
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Thu Dec 14 14:14:18 2017 -0500
+
+    routes conflict solved
+
+[33mcommit f1fc8518f4b4fabfc7c5b4d61cdad42f385004b0[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Thu Dec 14 14:12:59 2017 -0500
+
+    routes changed
+
+[33mcommit 58eeb01fa70ee3758e9a0049a575b43c93cda4e4[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Thu Dec 14 13:15:21 2017 -0500
+
+    Css without show
+
+[33mcommit 0395da689005f465c5e7578e73b69cb9aece4c81[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Thu Dec 14 12:20:50 2017 -0500
+
+    Add css in login loguot
+
+[33mcommit e860b258ac012cf49545348f38d0e2b609032c91[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Thu Dec 14 11:35:56 2017 -0500
+
+    commit after to pull
+
+[33mcommit ae67adb93281ff4567b225b7b5c801ce106d9d47[m
+Merge: d234077 1179cee
+Author: avanegasp <arco527@gmail.com>
+Date:   Thu Dec 14 11:34:53 2017 -0500
+
+    Working in css, answers, questions... Bd
+
+[33mcommit d2340778edc52d11bdd058317a6ab42f4318ee61[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Wed Dec 13 15:09:23 2017 -0500
+
+    all question, begin answer
+
+[33mcommit 1179ceec38bbf26ece6264da770a38a9027cb28b[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Wed Dec 13 11:16:26 2017 -0500
+
+    Create one txt file in order to text uploading folders and files to github
+
+[33mcommit 4e26e26811c2c97921768874e1591718b2a003b1[m
+Merge: 64255ab d1293ec
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Wed Dec 13 11:08:27 2017 -0500
+
+    Merge branch 'master' of https://github.com/avanegasp/SuperFlowStack
+    
+    New pull of the lates version of the app from angie repo
+
+[33mcommit d1293ec0119e23065a19cfec629f91700ee690a2[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Wed Dec 13 11:07:52 2017 -0500
+
+    Commit changes routes migratioRails
+
+[33mcommit 64255ab3c72ae54ecc047f0f56ddc1e201b887a7[m
+Merge: 8626081 865fe09
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Wed Dec 13 11:03:26 2017 -0500
+
+    Merge branch 'master' of https://github.com/avanegasp/SuperFlowStack
+    
+    Pulled from angie repo 2day of working
+
+[33mcommit 865fe097a8491f02c10022dcc2999aa64cae0e87[m
+Merge: b24902c ab1ab38
+Author: avanegasp <arco527@gmail.com>
+Date:   Wed Dec 13 10:45:18 2017 -0500
+
+    Routes
+
+[33mcommit b24902c8b493d141fa6aa3292840c3b690abcd9d[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Wed Dec 13 10:19:35 2017 -0500
+
+    Commit to routes
+
+[33mcommit 862608155cd94415de3953fbadaa48014606c957[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Tue Dec 12 21:06:39 2017 -0500
+
+    Create new question route and view in progress
+
+[33mcommit ab1ab3829f410e4f774cc25327ee4307d5a84627[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Tue Dec 12 20:52:44 2017 -0500
+
+    Create all the devise views and routes. Log in sing in log out
+
+[33mcommit 38ea62f5eb2bb88b6d4adcd8ff6e4b246a06248c[m
+Author: OEM Configuration (temporary user) <davidndy@gmail.com>
+Date:   Tue Dec 12 20:08:32 2017 -0500
+
+    Update models and migrations, create question with votes and answer and show it in the index page. Install devise
+
+[33mcommit a65b2278f6d29bb2e78e623d926c02abfba51695[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Tue Dec 12 18:22:06 2017 -0500
+
+    Fixing migrations
+
+[33mcommit dc01622aefa665f52e0ef3fbbfb9bd9d598faac2[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Tue Dec 12 17:12:37 2017 -0500
+
+    Bug with migrations
+
+[33mcommit aa2c310aefcc8d47e7860ea32f798785d7f8a783[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Mon Dec 11 21:08:24 2017 -0500
+
+    Asociations
+
+[33mcommit cbcb7595af518023787cdd72441077bb96a4331a[m
+Author: avanegasp <arco527@gmail.com>
+Date:   Mon Dec 11 20:53:45 2017 -0500
+
+    Creating models
