@@ -5,7 +5,7 @@ class VotesController < ApplicationController
       param_question = params[:question_id]
       if params[:vote][:type]=="sum"
         if is_user?(param_question,"question")
-          cant_vote(param_question,"question","create")
+          cant_vote(param_question,"question","vote")
         else
           vote_question(param_question)
         end        
@@ -20,7 +20,7 @@ class VotesController < ApplicationController
       param_answer = params[:answer_id]
       if params[:vote][:type]=="sum"
         if is_user?(param_answer,"answer")
-          cant_vote(param_answer,"answer","create")
+          cant_vote(param_answer,"answer","vote")
         else
           vote_answer(param_answer)
         end
@@ -35,10 +35,10 @@ class VotesController < ApplicationController
   end
 
   def cant_vote(param,type,action)
-    if action == "create"
-      @errors = "You cant vote twice on this #{type}"
+    if type == "question"
+      @errors_votes_q = "You cant #{action} twice on this #{type}"
     else
-      @errors = "You cant remove more than one vote"
+      @errors_votes_a = "You cant #{action} twice on this #{type}"
     end
     if type == "question"
       @question = Question.find(param)
