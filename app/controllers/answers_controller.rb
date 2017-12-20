@@ -1,5 +1,4 @@
 class AnswersController < ApplicationController
-
   def create
      question = valid_params_ans
      @answer = Question.find(question[:question_id]).answers.new(valid_params_ans)
@@ -12,9 +11,6 @@ class AnswersController < ApplicationController
 
        render '/questions/show'
      end
-
-    # puts valid_params_ans
-
   end
 
   private
