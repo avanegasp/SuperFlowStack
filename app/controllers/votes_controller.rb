@@ -36,9 +36,9 @@ class VotesController < ApplicationController
 
   def cant_vote(param,type,action)
     if type == "question"
-      @errors_votes_q = "You cant #{action} twice on this #{type}"
+      @errors_votes_q = "You cant #{action} twice this #{type}"
     else
-      @errors_votes_a = "You cant #{action} twice on this #{type}"
+      @errors_votes_a = "You cant #{action} twice this #{type}"
     end
     if type == "question"
       @question = Question.find(param)
