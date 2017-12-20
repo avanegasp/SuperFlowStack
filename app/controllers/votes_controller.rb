@@ -4,44 +4,67 @@ class VotesController < ApplicationController
     if params.key?("question_id")
       param_question = params[:question_id]
       if params[:vote][:type]=="sum"
-
-        if is_user?(param_question)
-          cant_vote(param_question,"question")
-        
+        if is_user?(param_question,"question")
+          cant_vote(param_question,"question","create")
         else
           vote_question(param_question)
         end        
       else
-        delete_question_vote(param_question)
+        if is_user?(param_question,"question")
+          delete_question_vote(param_question)
+        else
+          cant_vote(param_question,"question","delete")
+        end
       end
    else
       param_answer = params[:answer_id]
       if params[:vote][:type]=="sum"
-        vote_answer(param_answer)
+        if is_user?(param_answer,"answer")
+          cant_vote(param_answer,"answer","create")
+        else
+          vote_answer(param_answer)
+        end
       else
-        delete_answer_vote(param_answer)
+        if is_user?(param_answer,"answer")
+          delete_answer_vote(param_answer)
+        else
+          cant_vote(param_answer,"answer","delete")
+        end
       end
     end
   end
 
-  def cant_vote(param,type)
-    @errors = "You cant vote twice on this #{type}"
+  def cant_vote(param,type,action)
+    if action == "create"
+      @errors = "You cant vote twice on this #{type}"
+    else
+      @errors = "You cant remove more than one vote"
+    end
     if type == "question"
       @question = Question.find(param)
       render '/questions/show'
     else
-      @question = Answer.find(param_answer).question
+      @question = Answer.find(param).question
       render '/questions/show'
     end
   end
 
-  def is_user?(param_question)
-    Question.find(param_question).votes.each do |vote|
-      if vote.user_id == current_user.id
-        return true
+  def is_user?(param,type)
+    if type == "question"
+      Question.find(param).votes.each do |vote|
+        if vote.user_id == current_user.id
+          return true
+        end
       end
+      return false
+    else
+      Answer.find(param).votes.each do |vote|
+        if vote.user_id == current_user.id
+          return true
+        end
+      end
+      return false
     end
-    return false
   end
 
   def vote_question(param_question)
