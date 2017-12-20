@@ -5,7 +5,7 @@
         <%=link_to "Edit Question",edit_question_path(@question.id)%>
       </div>
     <% end %>
-    
+
     <div class="btn-question">
       <%=link_to "Ask Question" , new_question_path%>
     </div>
@@ -100,8 +100,8 @@
         </div>
       </div>
 
-      <<div class="btn-votes">
-        <%if current_user%>  
+      <div class="btn-votes">
+        <%if current_user%>
           <div class= "votes">
             <%= form_for [answer, answer.votes.new] do |f| %>
             <%= f.hidden_field  :type, value: "sum"%>
@@ -173,10 +173,8 @@
     <% end %>
   </div>
   <%if current_user == @question.user%>
-  <!-- <div class="delete"> -->
     <div class="btn-delete">
       <button><%=link_to "Delete Question" , question_path(@question.id), method:"delete"%></button>
     </div>
-  <!-- </div> -->
   <%end%>
 </div>
