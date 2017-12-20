@@ -29,6 +29,10 @@
       <% end %>
     <% end %>
 
+    <% if @errors_votes_q %>
+     <p class="errors_voting"> <%= @errors_votes_q %></p>
+    <% end %>
+
 <%if current_user%>
   <div class="votes">
     <div class="">
@@ -100,14 +104,32 @@
         </div>
       </div>
 
+<<<<<<< HEAD
       <div class="votes btn-votes">
         <%if current_user%>
+=======
+
+      <% if @errors_votes_a %>
+       <p class="errors_voting"> <%= @errors_votes_a %></p>
+      <% end %>
+
+      <div class="btn-votes">
+        <%if current_user%>
+        
+          <div class= "votes">
+>>>>>>> b18c45f96ca2771526f575cafa04ef7bdf1d2649
             <%= form_for [answer, answer.votes.new] do |f| %>
             <%= f.hidden_field  :type, value: "sum"%>
             <%= f.submit "Vote +" %>
             <% end %>
         <% end %>
+<<<<<<< HEAD
           <p>Votes = <%=  answer.votes.count%></p>
+=======
+
+        <p>Votes = <%=  answer.votes.count%></p>
+
+>>>>>>> b18c45f96ca2771526f575cafa04ef7bdf1d2649
         <%if current_user%>
             <%= form_for [answer, answer.votes.new] do |f| %>
             <%= f.hidden_field  :type, value: "rest" %>
