@@ -8,7 +8,7 @@ class VotesController < ApplicationController
           cant_vote(param_question,"question","vote")
         else
           vote_question(param_question)
-        end        
+        end
       else
         if is_user?(param_question,"question")
           delete_question_vote(param_question)
@@ -36,9 +36,9 @@ class VotesController < ApplicationController
 
   def cant_vote(param,type,action)
     if type == "question"
-      @errors_votes_q = "You cant #{action} twice this #{type}"
+      @errors_votes_q = "You can't #{action} twice this #{type}"
     else
-      @errors_votes_a = "You cant #{action} twice this #{type}"
+      @errors_votes_a = "You can't #{action} twice this #{type}"
     end
     if type == "question"
       @question = Question.find(param)

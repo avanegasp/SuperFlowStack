@@ -30,30 +30,30 @@
     <% end %>
 
     <% if @errors_votes_q %>
-     <p class="errors_voting"> <%= @errors_votes_q %></p>
+     <p class="alert alert-danger"> <%= @errors_votes_q %></p>
     <% end %>
 
-<%if current_user%>
-  <div class="votes">
-    <div class="">
-      <%= form_for [@question, @question.votes.new] do |f| %>
-      <%= f.hidden_field  :type, value: "sum"%>
-      <%= f.submit "Vote +" %>
-      <% end %>
-    </div>
-<% end %>
+  <%if current_user%>
+    <div class="votes">
+      <div class="">
+        <%= form_for [@question, @question.votes.new] do |f| %>
+        <%= f.hidden_field  :type, value: "sum"%>
+        <%= f.submit "Vote +" %>
+        <% end %>
+      </div>
+  <% end %>
 
-  <p>Votes = <%=  @question.votes.count%></p>
+    <p>Votes = <%=  @question.votes.count%></p>
 
-<%if current_user%>
-    <div class="">
-      <%= form_for [@question, @question.votes.new] do |f| %>
-      <%= f.hidden_field  :type, value: "rest" %>
-      <%= f.submit "Vote -" %>
-      <% end %>
+  <%if current_user%>
+      <div class="">
+        <%= form_for [@question, @question.votes.new] do |f| %>
+        <%= f.hidden_field  :type, value: "rest" %>
+        <%= f.submit "Vote -" %>
+        <% end %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
   <h5> Total comments: <%=  @question.comments.count%></h5>
 
@@ -105,7 +105,7 @@
       </div>
 
       <% if @errors_votes_a %>
-       <p class="errors_voting"> <%= @errors_votes_a %></p>
+       <p class="alert alert-danger"> <%= @errors_votes_a %></p>
       <% end %>
 
       <div class="btn-votes">
