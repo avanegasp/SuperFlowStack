@@ -19,6 +19,7 @@ class QuestionsController < ApplicationController
     else
     	puts @question.errors.full_messages
       @errors = @question.errors.full_messages
+      puts @errors
       puts current_user
       render :new
   end
