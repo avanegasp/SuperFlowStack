@@ -15,7 +15,7 @@
             <%= text_field_tag :query %>
             <%= submit_tag "Search" %>
           <% end %>
-          <a class="navbar-brand" href="/"> Welcome, <%= User.find_by(id: [current_user.id]).email%></a>
+          <a class="navbar-brand" href="/"> Bienvenido, <%= User.find_by(id: [current_user.id]).email%></a>
           <button class="btn btn-outline-success" type="button"><%=  link_to "Sign out",destroy_user_session_path, :method => 'delete'
           %></button>
         </nav>
