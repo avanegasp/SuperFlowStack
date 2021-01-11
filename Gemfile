@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 
 # devise
 gem'devise'
-gem 'redcarpet', '~> 3.0.0'
+gem 'redcarpet', '~> 3.5.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
